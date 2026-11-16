@@ -1,146 +1,182 @@
-
-# 12T SRAM Design Using Cadence Virtuoso
+# 12T SRAM Cell Design and Layout Using Cadence Virtuoso
 
 <p align="center">
-  <img src="https://img.shields.io/badge/VLSI-SRAM-blue?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Cadence-Virtuoso-orange?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Design-12T_SRAM-green?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Domain-VLSI-blue?style=for-the-badge" alt="VLSI">
+  <img src="https://img.shields.io/badge/EDA-Cadence%20Virtuoso-orange?style=for-the-badge" alt="Cadence Virtuoso">
+  <img src="https://img.shields.io/badge/Memory-12T%20SRAM-success?style=for-the-badge" alt="12T SRAM">
+  <img src="https://img.shields.io/badge/Project-Schematic%20%7C%20Simulation%20%7C%20Layout-purple?style=for-the-badge" alt="Project stages">
+</p>
+
+<p align="center">
+  <b>Design • Simulation • Stability Analysis • Physical Layout</b>
 </p>
 
 ---
 
 ## Project Overview
 
-This project focuses on the design and implementation of a **12-Transistor (12T) Static Random Access Memory (SRAM)** using Cadence Virtuoso.
+This repository documents the design of a **12-transistor (12T) Static Random-Access Memory (SRAM) cell** using **Cadence Virtuoso**. It brings together the circuit schematic, simulation views, a 4×1 SRAM organization, butterfly-curve analysis, and physical-layout work.
 
-The project includes SRAM schematic design, circuit simulation, functionality analysis, butterfly curve analysis, physical layout implementation, and verification using Design Rule Check (DRC) and Layout Versus Schematic (LVS).
+The objective is to understand the design flow of a custom SRAM cell at circuit level and to document the implementation evidence in one place.
 
----
+> **Project-scope note:** The images below document the work currently available in this repository. A plotted butterfly curve is shown as a stability-analysis result; separate, fully verified read/write timing results and final DRC/LVS pass reports are not claimed here unless the corresponding reports are added.
 
-## Objectives
+## Project Highlights
 
-- Design and implement a 12T SRAM cell using Cadence Virtuoso.
-- Understand SRAM architecture and circuit operation.
-- Implement a 4×1 SRAM configuration.
-- Analyze SRAM functionality through simulation.
-- Study butterfly curves for SRAM stability analysis.
-- Develop the physical layout of the SRAM design.
-- Perform DRC and LVS verification.
+- 12T SRAM cell schematic implemented in Cadence Virtuoso.
+- 4×1 SRAM organization included in the project images.
+- Circuit simulation view documented.
+- Butterfly curve used to study static noise-margin behaviour.
+- Physical layout view included.
+- DRC and LVS-related screenshots included as verification-work evidence.
 
----
+## Tools Used
 
-## Tools & Technologies
-
-| Tool | Application |
+| Tool / Feature | Purpose |
 |---|---|
-| Cadence Virtuoso | Schematic and layout design |
-| Analog Design Environment (ADE) | Circuit simulation |
-| DRC | Design Rule Check |
-| LVS | Layout Versus Schematic |
+| Cadence Virtuoso Schematic Editor | SRAM circuit schematic |
+| ADE (Analog Design Environment) | Circuit simulation and waveform analysis |
+| Virtuoso Layout Editor | Physical layout implementation |
+| DRC | Checks layout against process design rules |
+| LVS | Compares layout connectivity against the schematic |
 
----
-
-## Design Methodology
+## Design Flow
 
 ```text
-12T SRAM Cell Design
-        ↓
-Schematic Implementation
-        ↓
-Circuit Simulation
-        ↓
-Functional Verification
-        ↓
-Butterfly Curve Analysis
-        ↓
-4×1 SRAM Design
-        ↓
+12T SRAM Cell
+     |
+     v
+Schematic Design
+     |
+     v
+Simulation Setup and Analysis
+     |
+     +----> Butterfly Curve / Stability Study
+     |
+     v
+4 x 1 SRAM Organization
+     |
+     v
 Physical Layout
-        ↓
-DRC Verification
-        ↓
-LVS Verification
+     |
+     v
+DRC and LVS Checks
 ```
 
----
+## Design and Simulation Results
 
-# Project Images
+### 1. 12T SRAM Cell Schematic
 
-## 1. 12T SRAM Schematic
+The transistor-level schematic is the starting point of the design. It shows the 12-transistor memory-cell implementation.
 
-![12T SRAM Schematic](Images/12T_SRAM_SCHEMATIC.png)
+<p align="center">
+  <img src="Images/12T_SRAM_SCHEMATIC.png" alt="12T SRAM transistor-level schematic" width="90%">
+</p>
 
-## 2. 4×1 SRAM Design
+### 2. 4×1 SRAM Organization
 
-![4x1 SRAM Design](Images/4x1_sram.png)
+The repository also includes the 4×1 SRAM arrangement, showing how multiple memory cells are organized.
 
-## 3. SRAM Butterfly Curve
+<p align="center">
+  <img src="Images/4x1_sram.png" alt="4 by 1 SRAM organization" width="90%">
+</p>
 
-![SRAM Butterfly Curve](Images/BUTTERFLY%20GRAPH.jpeg)
+### 3. Butterfly Curve
 
-## 4. SRAM Functionality Simulation
+The butterfly plot is used to examine the stability characteristics of the SRAM cell. Static noise margin (SNM) can be estimated from the largest square that fits between the two mirrored voltage-transfer characteristics, provided the plot is generated with the appropriate read or hold bias conditions.
 
-![SRAM Functionality](Images/Sram_function.png)
+<p align="center">
+  <img src="Images/BUTTERFLY%20GRAPH.jpeg" alt="SRAM butterfly curve" width="90%">
+</p>
 
-## 5. Final SRAM Layout
+### 4. SRAM Simulation View
 
-![Final SRAM Layout](Images/layout_final.png)
+This screenshot records the SRAM simulation view available in the project.
 
-## 6. Initial Layout – LVS
+<p align="center">
+  <img src="Images/Sram_function.png" alt="SRAM simulation view" width="90%">
+</p>
 
-![Initial Layout LVS](Images/02_Initial_Layout_LVS.png)
+## Physical Design and Verification
 
-## 7. DRC Verification
+### 5. Layout View
 
-![DRC Verification](Images/03_DRC_Verification.png)
+The physical layout view of the SRAM design is shown below.
 
-## 8. Additional Design Image
+<p align="center">
+  <img src="Images/layout_final.png" alt="SRAM physical layout" width="90%">
+</p>
 
-![SNN](Images/snn.jpeg)
+### 6. Initial Layout / LVS Work
 
----
+This image documents the initial layout and LVS-related work. It is included as a design-verification record; it should not be interpreted as a final LVS-pass report unless the screenshot explicitly shows a clean match.
 
-## Physical Verification
+<p align="center">
+  <img src="Images/02_Initial_Layout_LVS.png" alt="Initial layout and LVS work" width="90%">
+</p>
 
-### DRC – Design Rule Check
+### 7. DRC Verification View
 
-DRC checks whether the physical layout satisfies the specified design rules.
+The DRC screenshot is included as evidence of the design-rule-checking stage. The final pass status should be read from the actual report in the image.
 
-### LVS – Layout Versus Schematic
+<p align="center">
+  <img src="Images/03_DRC_Verification.png" alt="DRC verification view" width="90%">
+</p>
 
-LVS compares the physical layout with the schematic to verify circuit connectivity and consistency.
+## Additional Project Image
 
----
+The following image is retained from the repository's original image set as supplementary project material.
 
-## Applications
+<p align="center">
+  <img src="Images/snn.jpeg" alt="Supplementary project image" width="90%">
+</p>
 
-- Processor Cache Memory
-- Embedded Memory Systems
-- High-Speed Digital Circuits
-- VLSI Systems
-- Memory Subsystems
+## What This Project Demonstrates
 
----
+- Translating an SRAM concept into a transistor-level schematic.
+- Using Cadence Virtuoso for schematic capture and circuit simulation.
+- Understanding the role of butterfly curves in SRAM stability analysis.
+- Organizing memory cells into a small SRAM array.
+- Moving from schematic design to physical layout.
+- Understanding the purpose of DRC and LVS in a custom IC design flow.
+
+## Repository Structure
+
+```text
+12T-SRAM-Cadence-Virtuoso/
+├── README.md
+└── Images/
+    ├── 12T_SRAM_SCHEMATIC.png
+    ├── 4x1_sram.png
+    ├── BUTTERFLY GRAPH.jpeg
+    ├── Sram_function.png
+    ├── layout_final.png
+    ├── 02_Initial_Layout_LVS.png
+    ├── 03_DRC_Verification.png
+    └── snn.jpeg
+```
+
+## Future Work
+
+- Add separate write and read transient waveforms with clearly labelled input conditions.
+- Record hold, read, and write operation checks independently.
+- Add extracted numerical SNM values, if measured.
+- Include final DRC and LVS summary reports.
+- Document the process node, supply voltage, transistor dimensions, and simulation conditions.
 
 ## Author
 
-**Bhargav Jampana**
-
+**Bhargav Jampana**  
 M.Tech – VLSI and Microelectronics  
 Indian Institute of Information Technology Design and Manufacturing (IIITDM), Kurnool
 
----
-
-## GitHub Repository
+## Repository
 
 [12T SRAM Design Using Cadence Virtuoso](https://github.com/226ec1006-Bhargav/12T-SRAM-Cadence-Virtuoso)
 
 ---
 
 <p align="center">
-  <b>12T SRAM Design | VLSI | Cadence Virtuoso</b>
-</p>
-
-<p align="center">
-  ⭐ Thank you for visiting this repository!
+  <b>12T SRAM | Custom VLSI Design | Cadence Virtuoso</b><br>
+  <sub>Academic design project</sub>
 </p>
