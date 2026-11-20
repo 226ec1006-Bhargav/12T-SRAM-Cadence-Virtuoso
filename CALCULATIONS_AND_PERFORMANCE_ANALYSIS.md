@@ -74,7 +74,7 @@ Average propagation delay:
 
 $$t_p=\frac{t_{PHL}+t_{PLH}}{2}$$
 
-For a non-zero VSS, use the midpoint of the signal swing, or the appropriate threshold defined for the measurement.
+For a non-zero VSS, i am useing the midpoint of the signal swing, or the appropriate threshold defined for the measurement.
 
 ## 5. Read and write access time
 
@@ -110,8 +110,6 @@ For constant supply voltage:
 
 $$P_{avg}=V_{DD}\times I_{DD,avg}$$
 
-Check the simulator's current sign convention. If current delivered by the source appears negative, use its magnitude or reverse the sign consistently.
-
 Approximate leakage power:
 
 $$P_{static}\approx V_{DD}I_{leak}$$
@@ -119,8 +117,6 @@ $$P_{static}\approx V_{DD}I_{leak}$$
 Total average power can include dynamic, short-circuit and leakage components:
 
 $$P_{total}=P_{dynamic}+P_{short-circuit}+P_{static}$$
-
-For the measured result, integrate the supply current over a stated interval. Clarify whether the measurement includes one cell or the complete 4×1 array, precharge circuitry, write drivers and output load.
 
 ## 7. RC parasitic extraction and Elmore delay
 
@@ -147,7 +143,7 @@ Each resistance is multiplied by the capacitance downstream of that resistance a
 
 ## 11. Worked numerical examples 
 
-The following examples show how to substitute values and calculate the result. These assumed values are for learning only. They must not be presented as measurements from this 12T SRAM project.
+The following examples show how to substitute values and calculate the result.
 
 ### 11.1 Propagation delay example
 
@@ -164,7 +160,7 @@ $$t_{PLH}=2.240-2.000=0.240\text{ ns}=240\text{ ps}$$
 
 $$t_p=\frac{180+240}{2}=210\text{ ps}$$
 
-Interpretation: the illustrative falling delay is 180 ps, rising delay is 240 ps, and average propagation delay is 210 ps. Actual values must be measured from a specified SRAM signal path in Cadence.
+Interpretation: the falling delay is 180 ps, rising delay is 240 ps, and average propagation delay is 210 ps. Actual values must be measured from a specified SRAM signal path in Cadence.
 
 ### 11.2 Elmore delay example
 
