@@ -76,18 +76,6 @@ $$t_p=\frac{t_{PHL}+t_{PLH}}{2}$$
 
 For a non-zero VSS, use the midpoint of the signal swing, or the appropriate threshold defined for the measurement.
 
-**SRAM caution:** State which path is measured: word-line-to-read-output, bit-line-to-output, write-control-to-stored-node, or a separate inverter path. Do not label an arbitrary inverter delay as SRAM read access time.
-
-### Cadence measurement steps
-
-1. Open the correct testbench and identify the input and output nets.
-2. Set transient analysis long enough to capture the transition.
-3. Run the simulation and plot both signals on the same time axis.
-4. Determine the 50% voltage crossing of the input and output.
-5. Measure the time difference using waveform cursors or ADE calculator functions.
-6. Repeat for the opposite transition.
-7. Record supply, load, temperature, process corner and input slew.
-
 ## 5. Read and write access time
 
 A common read-access definition is:
