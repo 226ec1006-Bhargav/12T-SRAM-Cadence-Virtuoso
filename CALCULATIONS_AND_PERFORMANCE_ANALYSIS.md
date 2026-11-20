@@ -151,8 +151,6 @@ The following examples show how to substitute values and calculate the result. T
 
 ### 11.1 Propagation delay example
 
-Assume a transient waveform gives these 50% crossing times:
-
 | Event | Time |
 |---|---:|
 | Input rising crosses 50% VDD | 1.000 ns |
@@ -230,18 +228,3 @@ Assume a schematic delay of 200 ps and an extracted-layout delay of 230 ps:
 $$\%\text{ change}=\frac{230-200}{200}\times100=15\%$$
 
 The extracted delay is 15% higher in this comparision.
-
-## 12. Which values can be calculated from the current GitHub graph?
-
-From the static DC screenshot, we can identify the displayed sweep range (0 to 1.8 V) and the two plotted transfer characteristics. We cannot calculate numerical tPHL, tPLH, read/write access time, power, Elmore delay, or extracted RC from this graph.
-
-| Requested result | Required data currently missing |
-|---|---|
-| Numerical SNM | Exported DC curve data or largest-square cursor measurements |
-| tPHL / tPLH | Transient input/output waveforms and defined path |
-| Read / write access time | Functional read/write transient waveforms |
-| Dynamic power | Actual switched capacitance, activity and frequency, or transient supply-current waveform |
-| Average / standby power | Supply voltage and measured average current |
-| Elmore delay | Extracted RC tree: each resistance and downstream capacitance |
-| Post-layout delay | Extracted view/netlist and transient simulation |
-| Percentage timing change | Both schematic and extracted timing results |
