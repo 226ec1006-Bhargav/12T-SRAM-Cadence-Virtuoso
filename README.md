@@ -156,6 +156,14 @@ The following image is retained from the repository's original image set as supp
     └── snn.jpeg
 ```
 
+## Detailed Calculations and Performance Analysis
+
+A separate guide explains the hand calculations, Cadence measurement workflow, and reporting requirements for MOSFET parameters, SRAM SNM, read/write timing, tPHL/tPLH, average power, RC parasitic extraction, Elmore delay, and schematic-versus-extracted comparison.
+
+[Open the 12T SRAM Calculations and Performance Analysis guide](CALCULATIONS_AND_PERFORMANCE_ANALYSIS.md)
+
+> The guide distinguishes formulas and pending measurements from verified project results. Numerical delay, power, SNM, and extracted RC values should be added only after measurement in the actual Cadence environment.
+
 ## Future Work
 
 - Add separate write and read transient waveforms with clearly labelled input conditions.
