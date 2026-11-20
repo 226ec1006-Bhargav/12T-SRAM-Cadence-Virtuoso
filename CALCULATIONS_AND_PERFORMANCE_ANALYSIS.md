@@ -20,10 +20,6 @@ The graph below is the actual image currently stored in this repository.
 
 **What this graph does not tell us by itself:** It does not provide a trustworthy numerical SNM value. The screenshot does not show a largest-square construction, cursor readings, or the raw DC sweep data. I will not invent an SNM number from a visual estimate. The 1.8 V sweep endpoint is visible, but confirm that it is also the actual SRAM supply voltage in the testbench before reporting it as VDD.
 
-### How to explain this graph to your professor
-
-"This is the DC transfer-characteristic plot of the two cross-coupled inverter paths in the SRAM cell. I swept the input voltage from 0 V to 1.8 V and plotted the corresponding output voltages. The two characteristics form the butterfly shape. This plot is used to evaluate static noise margin. To obtain a numerical SNM, I need to construct the largest possible square between the two lobes, or process the exported DC data to calculate that square. The screenshot alone is not enough to claim a measured SNM value."
-
 ### How SNM is calculated from the graph
 
 1. Export the DC sweep data for both transfer curves from Cadence (CSV or text).
@@ -34,7 +30,7 @@ The graph below is the actual image currently stored in this repository.
 
 $$SNM = \text{side length of the largest square inside the butterfly}$$
 
-For an exact numerical result, the exported curve data is required. Do not estimate SNM from the graph's overall 0–1.8 V axes or from the curve-crossing point.
+
 
 ## 2. Parameters to collect from the actual Cadence design
 
