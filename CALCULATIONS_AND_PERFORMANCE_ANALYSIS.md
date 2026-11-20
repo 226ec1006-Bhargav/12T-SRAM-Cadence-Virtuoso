@@ -26,8 +26,6 @@ The graph below is the actual image currently stored in this repository.
 
 $$SNM = \text{side length of the largest square inside the butterfly}$$
 
-
-
 ## 2. Parameters to collect from the actual Cadence design
 
 | Parameter | Symbol | Where to find it |
@@ -41,8 +39,6 @@ $$SNM = \text{side length of the largest square inside the butterfly}$$
 | Input rise and fall times | tr, tf | vpulse properties |
 | Switching frequency | f | Testbench pulse period |
 | Measurement interval | T | Transient analysis setup |
-
-Do not assume that all 12T SRAM topologies have the same transistor groups or read/write paths. Identify the exact devices and signal names from this project's schematic.
 
 ## 3. MOSFET hand calculations
 
@@ -204,9 +200,6 @@ Prepare these evidence items in order:
 5. 50% crossing measurements for delay.
 6. Supply-current waveform and average-power calculation.
 7. DRC/LVS reports, extraction report and extracted-view simulation if the lab supports them.
-
-**Do not add numerical delay, power, SNM or parasitic values until they have been measured from the actual design.**
-
 
 ## 11. Worked numerical examples 
 
