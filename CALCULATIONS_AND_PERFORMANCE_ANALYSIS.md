@@ -214,3 +214,109 @@ Prepare these evidence items in order:
 7. DRC/LVS reports, extraction report and extracted-view simulation if the lab supports them.
 
 **Do not add numerical delay, power, SNM or parasitic values until they have been measured from the actual design.**
+
+
+## 11. Worked numerical examples (illustrative only — NOT measured SRAM results)
+
+The following examples show how to substitute values and calculate the result. These assumed values are for learning only. They must not be presented as measurements from this 12T SRAM project.
+
+### 11.1 Propagation delay example
+
+Assume a transient waveform gives these 50% crossing times:
+
+| Event | Time |
+|---|---:|
+| Input rising crosses 50% VDD | 1.000 ns |
+| Output falling crosses 50% VDD | 1.180 ns |
+| Input falling crosses 50% VDD | 2.000 ns |
+| Output rising crosses 50% VDD | 2.240 ns |
+
+$$t_{PHL}=1.180-1.000=0.180\text{ ns}=180\text{ ps}$$
+
+$$t_{PLH}=2.240-2.000=0.240\text{ ns}=240\text{ ps}$$
+
+$$t_p=\frac{180+240}{2}=210\text{ ps}$$
+
+Interpretation: the illustrative falling delay is 180 ps, rising delay is 240 ps, and average propagation delay is 210 ps. Actual values must be measured from a specified SRAM signal path in Cadence.
+
+### 11.2 Elmore delay example
+
+Consider a simple two-resistor RC tree:
+
+- R1 = 1 kΩ from source to intermediate node.
+- R2 = 2 kΩ from intermediate node to output.
+- C1 = 10 fF from intermediate node to ground.
+- C2 = 20 fF from output node to ground.
+
+For delay to the output, R1 sees both downstream capacitors, while R2 sees only C2:
+
+$$t_{Elmore}=R_1(C_1+C_2)+R_2C_2$$
+
+$$t_{Elmore}=1\text{ k}\Omega(10+20)\text{ fF}+2\text{ k}\Omega(20\text{ fF})$$
+
+$$t_{Elmore}=30\text{ ps}+40\text{ ps}=70\text{ ps}$$
+
+Interpretation: the illustrative RC tree has 70 ps Elmore delay. Your SRAM layout's R and C must come from the extracted interconnect network; they cannot be calculated from the butterfly DC graph.
+
+### 11.3 Dynamic power example
+
+Assume only for this example:
+- Activity factor α = 0.2.
+- Effective switched capacitance Ceff = 20 fF.
+- Supply VDD = 1.8 V.
+- Switching frequency f = 100 MHz.
+
+$$P_{dynamic}=\alpha C_{eff}V_{DD}^{2}f$$
+
+$$P_{dynamic}=0.2(20\times10^{-15})(1.8)^2(100\times10^6)$$
+
+$$P_{dynamic}=1.296\times10^{-6}\text{ W}=1.296\text{ µW}$$
+
+Energy drawn from the supply for one full charging event:
+
+$$E_{charge}=C_{eff}V_{DD}^{2}=20\text{ fF}\times(1.8)^2=64.8\text{ fJ}$$
+
+This is a simplified capacitive-load estimate, not a measured SRAM power result.
+
+### 11.4 Average power from supply current example
+
+Assume a constant supply of 1.8 V and a hypothetical measured average supply-current magnitude of 120 µA:
+
+$$P_{avg}=V_{DD}I_{DD,avg}$$
+
+$$P_{avg}=1.8\times120\text{ µA}=216\text{ µW}$$
+
+The 120 µA value is hypothetical. Your actual value must come from the supply-current waveform in Cadence.
+
+### 11.5 Static leakage power example
+
+Assume a hypothetical standby leakage current of 2 µA at 1.8 V:
+
+$$P_{static}=V_{DD}I_{leak}=1.8\times2\text{ µA}=3.6\text{ µW}$$
+
+Measure actual standby current with the SRAM in a defined hold state.
+
+### 11.6 Percentage change after extraction example
+
+Assume a schematic delay of 200 ps and an extracted-layout delay of 230 ps:
+
+$$\%\text{ change}=\frac{230-200}{200}\times100=15\%$$
+
+The extracted delay is 15% higher in this illustrative comparison. Actual comparison requires schematic and extracted simulations under identical conditions.
+
+## 12. Which values can be calculated from the current GitHub graph?
+
+From the static DC screenshot, we can identify the displayed sweep range (0 to 1.8 V) and the two plotted transfer characteristics. We cannot calculate numerical tPHL, tPLH, read/write access time, power, Elmore delay, or extracted RC from this graph.
+
+| Requested result | Required data currently missing |
+|---|---|
+| Numerical SNM | Exported DC curve data or largest-square cursor measurements |
+| tPHL / tPLH | Transient input/output waveforms and defined path |
+| Read / write access time | Functional read/write transient waveforms |
+| Dynamic power | Actual switched capacitance, activity and frequency, or transient supply-current waveform |
+| Average / standby power | Supply voltage and measured average current |
+| Elmore delay | Extracted RC tree: each resistance and downstream capacitance |
+| Post-layout delay | Extracted view/netlist and transient simulation |
+| Percentage timing change | Both schematic and extracted timing results |
+
+**Do not copy the illustrative example values into the project's measured-results table.** Replace them only when the corresponding Cadence measurements are available.
