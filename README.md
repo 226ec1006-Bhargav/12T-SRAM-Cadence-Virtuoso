@@ -164,14 +164,6 @@ A separate guide explains the hand calculations, Cadence measurement workflow, a
 
 > The guide distinguishes formulas and pending measurements from verified project results. Numerical delay, power, SNM, and extracted RC values should be added only after measurement in the actual Cadence environment.
 
-## Future Work
-
-- Add separate write and read transient waveforms with clearly labelled input conditions.
-- Record hold, read, and write operation checks independently.
-- Add extracted numerical SNM values, if measured.
-- Include final DRC and LVS summary reports.
-- Document the process node, supply voltage, transistor dimensions, and simulation conditions.
-
 ## Author
 
 **Bhargav Jampana**  
