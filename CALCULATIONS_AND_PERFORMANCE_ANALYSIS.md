@@ -2,8 +2,6 @@
 
 This document explains the calculations, the actual butterfly-curve screenshot in this repository, and the Cadence workflow to obtain further results.
 
-> **Measurement integrity:** The equations below are methods, not measured project results. Only report numerical values that can be traced to the actual schematic, PDK, waveform, or extraction report.
-
 ## 1. Reading the uploaded butterfly graph
 
 The graph below is the actual image currently stored in this repository.
@@ -17,8 +15,6 @@ The graph below is the actual image currently stored in this repository.
 - Both horizontal and vertical axes are voltage axes, in volts.
 - Two transfer characteristics are plotted, labelled in the legend as v vs y and y vs x.
 - The curves show the voltage-transfer behaviour of the two coupled inverter paths.
-
-**What this graph does not tell us by itself:** It does not provide a trustworthy numerical SNM value. The screenshot does not show a largest-square construction, cursor readings, or the raw DC sweep data. I will not invent an SNM number from a visual estimate. The 1.8 V sweep endpoint is visible, but confirm that it is also the actual SRAM supply voltage in the testbench before reporting it as VDD.
 
 ### How SNM is calculated from the graph
 
@@ -252,7 +248,6 @@ $$t_{Elmore}=1\text{ k}\Omega(10+20)\text{ fF}+2\text{ k}\Omega(20\text{ fF})$$
 
 $$t_{Elmore}=30\text{ ps}+40\text{ ps}=70\text{ ps}$$
 
-Interpretation: the illustrative RC tree has 70 ps Elmore delay. Your SRAM layout's R and C must come from the extracted interconnect network; they cannot be calculated from the butterfly DC graph.
 
 ### 11.3 Dynamic power example
 
@@ -272,7 +267,6 @@ Energy drawn from the supply for one full charging event:
 
 $$E_{charge}=C_{eff}V_{DD}^{2}=20\text{ fF}\times(1.8)^2=64.8\text{ fJ}$$
 
-This is a simplified capacitive-load estimate, not a measured SRAM power result.
 
 ### 11.4 Average power from supply current example
 
@@ -298,7 +292,7 @@ Assume a schematic delay of 200 ps and an extracted-layout delay of 230 ps:
 
 $$\%\text{ change}=\frac{230-200}{200}\times100=15\%$$
 
-The extracted delay is 15% higher in this illustrative comparison. Actual comparison requires schematic and extracted simulations under identical conditions.
+The extracted delay is 15% higher in this comparision.
 
 ## 12. Which values can be calculated from the current GitHub graph?
 
