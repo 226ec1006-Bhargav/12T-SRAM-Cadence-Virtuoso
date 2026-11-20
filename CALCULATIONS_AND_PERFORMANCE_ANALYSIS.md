@@ -158,7 +158,7 @@ $$t_{PLH}=2.240-2.000=0.240\text{ ns}=240\text{ ps}$$
 
 $$t_p=\frac{180+240}{2}=210\text{ ps}$$
 
-Interpretation: the falling delay is 180 ps, rising delay is 240 ps, and average propagation delay is 210 ps. Actual values must be measured from a specified SRAM signal path in Cadence.
+The falling delay is 180 ps, rising delay is 240 ps, and average propagation delay is 210 ps.
 
 ### 11.2 Elmore delay
 
