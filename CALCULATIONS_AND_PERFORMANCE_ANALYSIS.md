@@ -86,8 +86,6 @@ A write-time definition is:
 
 $$t_{write}=t(\text{stored node reaches required new logic level})-t(\text{write begins})$$
 
-Define the exact start event, output-valid threshold and final stored-node threshold in the testbench. These operation-level measurements are not automatically equal to inverter tPHL/tPLH.
-
 ## 6. Power calculations
 
 First-order dynamic switching power:
