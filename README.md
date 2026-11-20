@@ -178,6 +178,8 @@ A separate guide explains the hand calculations, Cadence measurement workflow, a
 M.Tech – VLSI and Microelectronics  
 Indian Institute of Information Technology Design and Manufacturing (IIITDM), Kurnool
 
+**Project Guidance:** Dr. P. Ranga Babu
+
 ## Repository
 
 [12T SRAM Design Using Cadence Virtuoso](https://github.com/226ec1006-Bhargav/12T-SRAM-Cadence-Virtuoso)
