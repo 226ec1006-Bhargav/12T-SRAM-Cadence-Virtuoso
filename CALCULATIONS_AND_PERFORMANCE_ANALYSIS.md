@@ -199,7 +199,7 @@ $$E_{charge}=C_{eff}V_{DD}^{2}=20\text{ fF}\times(1.8)^2=64.8\text{ fJ}$$
 
 ### 11.4 Average power from supply current
 
-Assume a constant supply of 1.8 V and a hypothetical measured average supply-current magnitude of 120 µA:
+ a constant supply of 1.8 V and a hypothetical measured average supply-current magnitude of 120 µA:
 
 $$P_{avg}=V_{DD}I_{DD,avg}$$
 
@@ -209,15 +209,14 @@ The 120 µA value is hypothetical. Your actual value must come from the supply-c
 
 ### 11.5 Static leakage power
 
-Assume a hypothetical standby leakage current of 2 µA at 1.8 V:
+ a hypothetical standby leakage current of 2 µA at 1.8 V:
 
 $$P_{static}=V_{DD}I_{leak}=1.8\times2\text{ µA}=3.6\text{ µW}$$
 
-Measure actual standby current with the SRAM in a defined hold state.
 
 ### 11.6 Percentage change after extraction
 
-Assume a schematic delay of 200 ps and an extracted-layout delay of 230 ps:
+a schematic delay of 200 ps and an extracted-layout delay of 230 ps:
 
 $$\%\text{ change}=\frac{230-200}{200}\times100=15\%$$
 
