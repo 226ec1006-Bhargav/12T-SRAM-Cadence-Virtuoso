@@ -157,39 +157,6 @@ Each resistance is multiplied by the capacitance downstream of that resistance a
 7. Simulate the extracted design with the same testbench as the schematic run.
 8. Compare the schematic and extracted results.
 
-A layout screenshot alone does not prove RC extraction has been completed. DRC/LVS status and extraction-tool availability must be confirmed.
-
-## 8. Schematic versus extracted comparison
-
-| Metric | Schematic result | Extracted result | Difference |
-|---|---:|---:|---:|
-| Read access time | To measure | To measure | Calculate |
-| Write time | To measure | To measure | Calculate |
-| tPHL | To measure | To measure | Calculate |
-| tPLH | To measure | To measure | Calculate |
-| Average power | To measure | To measure | Calculate |
-
-Percentage change:
-
-$$\%\text{ change}=\frac{X_{extracted}-X_{schematic}}{X_{schematic}}\times100$$
-
-Use identical supply, corner, temperature, input slew, load and measurement definitions for both runs.
-
-## 9. What is currently evidenced in this repository
-
-| Item | Status based on currently documented material |
-|---|---|
-| 12T cell schematic | Image included |
-| 4×1 organization | Image included |
-| DC transfer / butterfly-style plot | Image included; numerical SNM not established from screenshot |
-| Functional 4×1 read waveform | Not yet documented as verified |
-| Functional 4×1 write waveform | Not yet documented as verified |
-| tPHL / tPLH | Requires defined path and transient measurement |
-| Read / write access time | Requires functional transient measurement |
-| Average power | Requires supply-current measurement |
-| RC extraction | Requires confirmed DRC/LVS status and extraction flow |
-| Post-layout comparison | Requires extracted-view simulation |
-
 ## 11. Worked numerical examples 
 
 The following examples show how to substitute values and calculate the result. These assumed values are for learning only. They must not be presented as measurements from this 12T SRAM project.
