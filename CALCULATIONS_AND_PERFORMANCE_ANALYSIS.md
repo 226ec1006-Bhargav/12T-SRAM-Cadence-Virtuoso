@@ -162,8 +162,6 @@ The falling delay is 180 ps, rising delay is 240 ps, and average propagation del
 
 ### 11.2 Elmore delay
 
-Consider a simple two-resistor RC tree:
-
 - R1 = 1 kΩ from source to intermediate node.
 - R2 = 2 kΩ from intermediate node to output.
 - C1 = 10 fF from intermediate node to ground.
@@ -180,7 +178,6 @@ $$t_{Elmore}=30\text{ ps}+40\text{ ps}=70\text{ ps}$$
 
 ### 11.3 Dynamic power
 
-Assume only for this example:
 - Activity factor α = 0.2.
 - Effective switched capacitance Ceff = 20 fF.
 - Supply VDD = 1.8 V.
