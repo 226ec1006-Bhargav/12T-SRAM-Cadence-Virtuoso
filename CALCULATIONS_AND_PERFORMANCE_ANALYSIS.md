@@ -318,5 +318,3 @@ From the static DC screenshot, we can identify the displayed sweep range (0 to 1
 | Elmore delay | Extracted RC tree: each resistance and downstream capacitance |
 | Post-layout delay | Extracted view/netlist and transient simulation |
 | Percentage timing change | Both schematic and extracted timing results |
-
-**Do not copy the illustrative example values into the project's measured-results table.** Replace them only when the corresponding Cadence measurements are available.
