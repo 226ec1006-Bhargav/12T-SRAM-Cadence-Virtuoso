@@ -190,17 +190,6 @@ Use identical supply, corner, temperature, input slew, load and measurement defi
 | RC extraction | Requires confirmed DRC/LVS status and extraction flow |
 | Post-layout comparison | Requires extracted-view simulation |
 
-## 10. What to show the professor next
-
-Prepare these evidence items in order:
-1. The 12T schematic with transistor names and W/L values.
-2. The 4×1 testbench with VDD, input sources and loads visible.
-3. The DC transfer plot and exported DC data for numerical SNM.
-4. Separate read and write transient waveforms.
-5. 50% crossing measurements for delay.
-6. Supply-current waveform and average-power calculation.
-7. DRC/LVS reports, extraction report and extracted-view simulation if the lab supports them.
-
 ## 11. Worked numerical examples 
 
 The following examples show how to substitute values and calculate the result. These assumed values are for learning only. They must not be presented as measurements from this 12T SRAM project.
