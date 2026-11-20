@@ -216,7 +216,7 @@ Prepare these evidence items in order:
 **Do not add numerical delay, power, SNM or parasitic values until they have been measured from the actual design.**
 
 
-## 11. Worked numerical examples (illustrative only — NOT measured SRAM results)
+## 11. Worked numerical examples 
 
 The following examples show how to substitute values and calculate the result. These assumed values are for learning only. They must not be presented as measurements from this 12T SRAM project.
 
