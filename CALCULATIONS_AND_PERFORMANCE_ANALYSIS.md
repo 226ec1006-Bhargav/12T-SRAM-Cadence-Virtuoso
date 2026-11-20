@@ -139,11 +139,11 @@ Each resistance is multiplied by the capacitance downstream of that resistance a
 7. Simulate the extracted design with the same testbench as the schematic run.
 8. Compare the schematic and extracted results.
 
-## 11. Worked numerical examples 
+## 11. Worked numerical
 
 The following examples show how to substitute values and calculate the result.
 
-### 11.1 Propagation delay example
+### 11.1 Propagation delay
 
 | Event | Time |
 |---|---:|
@@ -160,7 +160,7 @@ $$t_p=\frac{180+240}{2}=210\text{ ps}$$
 
 Interpretation: the falling delay is 180 ps, rising delay is 240 ps, and average propagation delay is 210 ps. Actual values must be measured from a specified SRAM signal path in Cadence.
 
-### 11.2 Elmore delay example
+### 11.2 Elmore delay
 
 Consider a simple two-resistor RC tree:
 
@@ -178,7 +178,7 @@ $$t_{Elmore}=1\text{ k}\Omega(10+20)\text{ fF}+2\text{ k}\Omega(20\text{ fF})$$
 $$t_{Elmore}=30\text{ ps}+40\text{ ps}=70\text{ ps}$$
 
 
-### 11.3 Dynamic power example
+### 11.3 Dynamic power
 
 Assume only for this example:
 - Activity factor α = 0.2.
@@ -197,7 +197,7 @@ Energy drawn from the supply for one full charging event:
 $$E_{charge}=C_{eff}V_{DD}^{2}=20\text{ fF}\times(1.8)^2=64.8\text{ fJ}$$
 
 
-### 11.4 Average power from supply current example
+### 11.4 Average power from supply current
 
 Assume a constant supply of 1.8 V and a hypothetical measured average supply-current magnitude of 120 µA:
 
@@ -207,7 +207,7 @@ $$P_{avg}=1.8\times120\text{ µA}=216\text{ µW}$$
 
 The 120 µA value is hypothetical. Your actual value must come from the supply-current waveform in Cadence.
 
-### 11.5 Static leakage power example
+### 11.5 Static leakage power
 
 Assume a hypothetical standby leakage current of 2 µA at 1.8 V:
 
@@ -215,7 +215,7 @@ $$P_{static}=V_{DD}I_{leak}=1.8\times2\text{ µA}=3.6\text{ µW}$$
 
 Measure actual standby current with the SRAM in a defined hold state.
 
-### 11.6 Percentage change after extraction example
+### 11.6 Percentage change after extraction
 
 Assume a schematic delay of 200 ps and an extracted-layout delay of 230 ps:
 
